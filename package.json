@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "name": "stug",
+  "description": "Simple web server broadcasting file changes through WebSocket.",
+  "author": "Alexandre Breteau <contact@seldszar.fr>",
+  "license": "MIT",
+  "homepage": "https://github.com/seldszar/stug#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seldszar/stug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seldszar/stug/issues"
+  },
+  "bin": {
+    "stug": "bin/index.js"
+  },
+  "engine": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "lint": "eslint --format codeframe **/*.js",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "nukor": "^1.0.0",
+    "signale": "^1.1.0",
+    "slash": "^2.0.0",
+    "socket.io": "^2.1.1",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^1.0.0-rc.8",
+    "lint-staged": "^7.0.5",
+    "prettier": "^1.12.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --format codeframe"
+  }
+}
