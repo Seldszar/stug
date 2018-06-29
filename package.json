@@ -25,6 +25,7 @@
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "globby": "^8.0.1",
     "nukor": "^1.0.0",
     "signale": "^1.1.0",
     "slash": "^2.0.0",
